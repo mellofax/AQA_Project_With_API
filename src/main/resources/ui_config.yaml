@@ -1,0 +1,12 @@
+project: "Default"
+databaseDetails:
+  type: "db_type"
+  host: "db_host"
+  username: "db_username"
+  password: "db_password"
+  dbName: "db_name"
+driverDetails:
+  browserWindowSize: "1700x1100"
+  downloadDir: "/home/user/Downloads"
+  timeout: 120000
+  appURL: "https://www.saucedemo.com"

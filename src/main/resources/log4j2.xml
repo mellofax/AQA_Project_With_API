@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration packages="com.epam.ta.reportportal.log4j.appender">
+    <properties>
+        <property name="rp_pattern">%m%n</property>
+        <property name="console_pattern">%m%n</property>
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${console_pattern}"/>
+        </Console>
+        <ReportPortalLog4j2Appender name="ReportPortalLog4j2Appender">
+            <PatternLayout pattern="${rp_pattern}"/>
+        </ReportPortalLog4j2Appender>
+    </appenders>
+    <loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ReportPortalLog4j2Appender"/>
+        </Root>
+    </loggers>
+</configuration>
