@@ -32,12 +32,11 @@ public class TestNGRunner {
     }
 
     private Config loadConfig() {
-        String path = switch (ConfigTypes.valueOf(envVars.get("config"))) {
-            case API:
-                yield "/api_config.yaml";
-            case UI:
-                yield "/ui_config.yaml";
-        };
+        String path = "";
+        if(ConfigTypes.valueOf(envVars.get("config")).equals(ConfigTypes.API))
+            path = "/api_config.yaml";
+        else if (ConfigTypes.valueOf(envVars.get("config")).equals(ConfigTypes.UI))
+            path = "/ui_config.yaml";
         Yaml yaml = new Yaml(new Constructor(Config.class));
         var inputStream = getClass().getResourceAsStream(path);
         return yaml.load(inputStream);
