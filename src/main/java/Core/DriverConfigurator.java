@@ -28,6 +28,6 @@ public class DriverConfigurator {
             //todo select your selenoid url
             Configuration.remote = "#remote_url";
         }
-        Configuration.headless = false;
+        Configuration.headless = true;
     }
 }
